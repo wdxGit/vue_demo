@@ -15,29 +15,21 @@
               @close="handleClose"
               background-color="#3e4358"
               text-color="#fff"
-              active-text-color="#ffd04b"
+              active-text-color="#fd7522"
               :router=true>
-              <el-menu-item index="/home/charts" :class="{isActive : isActive}">
+              <el-menu-item index="/home/charts" :class="{isActive : isActive === '/home/charts'}" @click="home">
                 <i class="iconfont icon-shouye"></i>
                 <span slot="title">首页</span>
               </el-menu-item>
-              <el-submenu index="/home">
+              <el-submenu index="/home/myOrder">
                 <template slot="title">
                   <i class="iconfont icon-icon"></i>
                   <span slot="title">订单管理</span>
                 </template>
                 <el-menu-item-group>
-                  <template slot="title">分组一</template>
-                  <el-menu-item index="/home">选项1</el-menu-item>
-                  <el-menu-item index="/home">选项2</el-menu-item>
+                  <el-menu-item index="/home/myOrder">我的订单</el-menu-item>
+                  <el-menu-item index="/home">快速下单</el-menu-item>
                 </el-menu-item-group>
-                <el-menu-item-group title="分组2">
-                  <el-menu-item index="/home">钱包</el-menu-item>
-                </el-menu-item-group>
-                <el-submenu index="/home">
-                  <template slot="title">选项4</template>
-                  <el-menu-item index="/home">选项1</el-menu-item>
-                </el-submenu>
               </el-submenu>
               <el-submenu index="/home">
                 <template slot="title">
@@ -84,6 +76,9 @@ export default {
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
+    },
+    home(){
+      this.isActive = '/home/charts'
     }
   },
   components: {
@@ -140,7 +135,7 @@ section{
   width: 24px;
   height: 18px;
 }
-.isActive i{
+.isActive>i{
   color:$color;
 }
 </style>

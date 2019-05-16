@@ -27,6 +27,11 @@ export default new Router({
             name: 'charts',
             component: () =>
                 import ('@/views/Home/charts/charts.vue')
+        }, {
+            path: '/home/myOrder', //我的订单
+            name: 'myOrder',
+            component: () =>
+                import ('@/views/Home/myOrder/myOrder.vue')
         }]
     }, {
         path: '/register', //注册
