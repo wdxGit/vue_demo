@@ -6,53 +6,6 @@
       <span>商户后台</span>
     </el-header>
     <el-container>
-      <el-aside width="260px">
-        <el-row class="tac">
-          <el-col :span="12">
-            <el-menu
-              class="el-menu-vertical-demo"
-              @open="handleOpen"
-              @close="handleClose"
-              background-color="#3e4358"
-              text-color="#fff"
-              active-text-color="#fd7522"
-              :router=true>
-              <el-menu-item index="/home/charts" :class="{isActive : isActive === '/home/charts'}" @click="home">
-                <i class="iconfont icon-shouye"></i>
-                <span slot="title">首页</span>
-              </el-menu-item>
-              <el-submenu index="/home/myOrder">
-                <template slot="title">
-                  <i class="iconfont icon-icon"></i>
-                  <span slot="title">订单管理</span>
-                </template>
-                <el-menu-item-group>
-                  <el-menu-item index="/home/myOrder">我的订单</el-menu-item>
-                  <el-menu-item index="/home">快速下单</el-menu-item>
-                </el-menu-item-group>
-              </el-submenu>
-              <el-submenu index="/home">
-                <template slot="title">
-                  <i class="iconfont icon-qianbao"></i>
-                  <span slot="title">钱包</span>
-                </template>
-              </el-submenu>
-              <el-submenu index="/home">
-                <template slot="title">
-                  <i class="iconfont icon-shanghuduantongji"></i>
-                  <span slot="title">商户中心</span>
-                </template>
-              </el-submenu>
-              <el-submenu index="/home">
-                <template slot="title">
-                  <i class="iconfont icon-shezhi"></i>
-                  <span slot="title">设置</span>
-                </template>
-              </el-submenu>
-            </el-menu>
-          </el-col>
-        </el-row>
-      </el-aside>
       <el-main width="100%">
         <router-view></router-view>
       </el-main>
@@ -70,16 +23,7 @@ export default {
     }
   },
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-      this.isActive = key;
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    home(){
-      this.isActive = '/home/charts'
-    }
+    
   },
   components: {
 
@@ -107,16 +51,6 @@ section{
     margin-top: -50px;
     margin-left: 76px;
   }
-}
-.el-aside {
-  background-color: #3e4358;
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 100px;
-  bottom: 0;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 .el-main {
