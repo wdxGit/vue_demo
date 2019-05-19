@@ -171,19 +171,9 @@ $color:#fd7e23;
             width: 180px;
             height: 46px;
           }
-          .active{
-            border: #fd7e23;
-          }
-          
         }
       }
     }
-  }
-  .el-date-table td.available:hover{
-    color:$color;
-  }
-  .el-date-table td.current:not(.disabled) span{
-    background-color: #fd7e23;
   }
 }
 
