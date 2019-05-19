@@ -81,6 +81,9 @@ export default {
 
 <style lang="scss">
 $color:#fd7522;
+.tac{
+  min-height: 100%;
+}
   .el-aside {
     background-color: #3e4358;
     display: block;
