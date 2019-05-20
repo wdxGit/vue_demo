@@ -20,7 +20,7 @@
                 </template>
                 <el-menu-item-group>
                   <el-menu-item index="/home/myOrder" :class="{isActive : isActive === '/home/myOrder'}"><i>我的订单</i></el-menu-item>
-                  <el-menu-item index="/home"><i>快速下单</i></el-menu-item>
+                  <el-menu-item index="/home/quickOrder" :class="{isActive : isActive === '/home/quickOrder'}"><i>快速下单</i></el-menu-item>
                 </el-menu-item-group>
               </el-submenu>
               <el-submenu index="/home">

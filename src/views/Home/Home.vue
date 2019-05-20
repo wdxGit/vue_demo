@@ -3,7 +3,7 @@
   <el-container>
     <el-header height="100px">
       <img src="../../assets/images/logo_2.png" alt="">
-      <span>商户坎坰</span>
+      <span>商户后台</span>
     </el-header>
     <el-container>
       <el-main width="100%">
