@@ -2,6 +2,7 @@
   <div class="myOrder">
     <!-- 侧边导航 -->
     <myAside ref="myAside" :openeds="['/home/myOrder']" :isActive="'/home/myOrder'"/>
+
     <!-- 表格 -->
     <div class="table">
       <div class="title">
@@ -36,7 +37,7 @@
                   format="yyyy 年 MM 月 dd 日"
                   value-format="timestamp">
                 </el-date-picker>
-                <button>查询</button>
+                <el-button type="primary">查询</el-button>
               </div>
             </li>
           </ul>
@@ -62,7 +63,23 @@
           prop="address"
           label="发货人/收货人">
         </el-table-column>
+        <el-table-column
+          prop="pay"
+          label="支付金额">
+          <template scope="scope">
+            <span v-if="scope.row.pay===1" style="color:red">{{ scope.row.pay }}</span>
+            <span v-else style="color: #37B328">{{ scope.row.pay }}</span>
+          </template>
+        </el-table-column>
       </el-table>
+
+      <!-- 分页 -->
+      <el-pagination
+        background
+        layout="prev, pager, next"
+        :total="1000"
+        @current-change="handleCurrentChange">
+      </el-pagination>
     </div>
   </div>
 </template>
@@ -81,25 +98,39 @@ export default {
       tableData: [{
             date: '2016-05-02',
             name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
+            address: '上海市普陀区金沙江路 1518 弄',
+            pay: 1
           }, {
             date: '2016-05-04',
             name: '王小虎',
-            address: '上海市普陀区金沙江路 1517 弄'
+            address: '上海市普陀区金沙江路 1517 弄',
+            pay: -1
           }, {
             date: '2016-05-01',
             name: '王小虎',
-            address: '上海市普陀区金沙江路 1519 弄'
+            address: '上海市普陀区金沙江路 1519 弄',
+            pay:1
           }, {
             date: '2016-05-03',
             name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
+            address: '上海市普陀区金沙江路 1516 弄',
+            pay:-1
           }]
     }
   },
   methods: {
     tab(index){
       this.active = index;
+    },
+    pay(row,column){
+      if(row.pay === 1){
+        return "mai"
+      }else{
+        return "ma"
+      }
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
     }
   },
   components: {
@@ -173,6 +204,27 @@ $color:#fd7e23;
           }
         }
       }
+      .el-date-editor{
+        margin-right: 30px;
+      }
+    }
+
+    //分页按钮
+    .btn-prev {
+      .el-icon-arrow-left:before{
+        content:"上一页"
+      }
+    }
+    .btn-next{
+      .el-icon-arrow-right:before{
+        content:"下一页"
+      }
+    }
+    .btn-next, .btn-prev, .el-pager li{
+      color:#959595;
+      width: 64px;
+      background-color: #edf1f7;
+      border: 1px solid $color;
     }
   }
 }
