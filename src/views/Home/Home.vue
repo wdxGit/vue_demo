@@ -37,7 +37,8 @@ $color:#fd7522;
   height: 100%;
 }
 .el-container{
-  min-height: 100%;
+  // min-height: 100%;
+  // margin-bottom: -100px;
 }
 section{
   height: 100%;
@@ -51,7 +52,7 @@ section{
   }
   span{
     display: block;
-    margin-top: -50px;
+    margin-top: -52px;
     margin-left: 76px;
   }
 }
