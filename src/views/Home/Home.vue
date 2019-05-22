@@ -61,9 +61,7 @@ section{
   min-height: 100%;
   background-color: #edf1f7;
   margin-left: 260px;
-  overflow-x: hidden;
   overflow-y: hidden;
-  text-align: center;
 }
 .el-menu-vertical-demo{
   position: absolute;

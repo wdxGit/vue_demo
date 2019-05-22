@@ -142,6 +142,7 @@ export default {
 <style lang="scss">
 $color:#fd7e23;
 .myOrder{
+  text-align: center;
   .table{
     .title{
       width: 1600px;

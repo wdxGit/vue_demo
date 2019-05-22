@@ -140,6 +140,7 @@ export default {
 $color:#fd7e23;
 .charts{
   min-height: 100%;
+  text-align: center;
 }
 .chartBox{
   .title{

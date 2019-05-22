@@ -8,30 +8,27 @@
       <!-- 发货地址 -->
       <Ship/>
 
+      <!-- 收货地址 -->
+      <Take/>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import myAside from '@/components/myAside'
-import Ship from './Ship/Ship'
+import Ship from '@/components/Ship'
+import Take from '@/components/Take'
 export default {
   name:"quickOrder",
   data() {
     return {
-      ship:'默认地址', //发货地址
-      house:'默认门牌号', //门牌号
-      houseTip:'', //门牌验证
-      shopName:'发货人姓名',
-      shopTip:'', //发货人验证
-      shopPhone:'发货人电话',
-      shopPhoneTip: '', //发货人电话
-      shopIsActive: true, //判断是否选中
+
     }
   },
   components: {
     myAside,
-    Ship
+    Ship,
+    Take
   }
 }
 </script>
