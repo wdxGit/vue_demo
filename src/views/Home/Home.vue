@@ -5,10 +5,11 @@
       <img src="../../assets/images/logo_2.png" alt="">
       <span>商户后台</span>
     </el-header>
+    
     <el-container>
-      <el-main width="100%">
-        <router-view></router-view>
-      </el-main>
+        <el-main width="100%">
+          <router-view></router-view>
+        </el-main>
     </el-container>
   </el-container>
 </div>
@@ -37,7 +38,7 @@ $color:#fd7522;
   height: 100%;
 }
 .el-container{
-  // min-height: 100%;
+  height: 100%;
   // margin-bottom: -100px;
 }
 section{
@@ -61,6 +62,7 @@ section{
   min-height: 100%;
   background-color: #edf1f7;
   margin-left: 260px;
+  overflow-x: hidden;
   overflow-y: hidden;
 }
 .el-menu-vertical-demo{
