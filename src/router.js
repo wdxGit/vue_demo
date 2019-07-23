@@ -32,11 +32,6 @@ export default new Router({
             name: 'myOrder',
             component: () =>
                 import ('@/views/Home/myOrder/myOrder.vue')
-        }, {
-            path: '/home/quickOrder', //快速下单
-            name: 'quickOrder',
-            component: () =>
-                import ('@/views/Home/quickOrder/quickOrder.vue')
         }]
     }, {
         path: '/register', //注册

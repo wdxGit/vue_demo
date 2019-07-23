@@ -3,8 +3,6 @@
         <el-col :span="12">
           <el-menu
               class="el-menu-vertical-demo"
-              @open="handleOpen"
-              @close="handleClose"
               background-color="#3e4358"
               text-color="#fff"
               :default-openeds="openeds"
@@ -20,7 +18,7 @@
                 </template>
                 <el-menu-item-group>
                   <el-menu-item index="/home/myOrder" :class="{isActive : isActive === '/home/myOrder'}"><i>我的订单</i></el-menu-item>
-                  <el-menu-item index="/home/quickOrder" :class="{isActive : isActive === '/home/quickOrder'}"><i>快速下单</i></el-menu-item>
+                  <el-menu-item index="/home"><i>快速下单</i></el-menu-item>
                 </el-menu-item-group>
               </el-submenu>
               <el-submenu index="/home">
@@ -65,14 +63,6 @@ export default {
       default:'/home/charts'
     }
   },
-  methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
-    }
-  },
   components: {
 
   }
@@ -81,9 +71,6 @@ export default {
 
 <style lang="scss">
 $color:#fd7522;
-.tac{
-  // height: 100%;
-}
   .el-aside {
     background-color: #3e4358;
     display: block;
